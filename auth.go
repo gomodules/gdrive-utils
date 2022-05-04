@@ -15,14 +15,13 @@ import (
 	"google.golang.org/api/calendar/v3"
 )
 
-func DefaultClient(dir string) (*http.Client, error) {
+func DefaultClient(dir string, scopes ...string) (*http.Client, error) {
 	b, err := ioutil.ReadFile(filepath.Join(dir, "credentials.json"))
 	if err != nil {
 		return nil, fmt.Errorf("unable to read client secret file: %v", err)
 	}
 
-	// If modifying these scopes, delete your previously saved token.json.
-	config, err := google.ConfigFromJSON(b,
+	scopes = append(scopes,
 		"https://www.googleapis.com/auth/documents",
 		"https://www.googleapis.com/auth/documents.readonly",
 		"https://www.googleapis.com/auth/drive",
@@ -36,6 +35,9 @@ func DefaultClient(dir string) (*http.Client, error) {
 		calendar.CalendarEventsReadonlyScope,
 		calendar.CalendarReadonlyScope,
 	)
+
+	// If modifying these scopes, delete your previously saved token.json.
+	config, err := google.ConfigFromJSON(b, scopes...)
 	if err != nil {
 		return nil, fmt.Errorf("unable to parse client secret file to config: %v", err)
 	}
