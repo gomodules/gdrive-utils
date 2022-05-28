@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/gocarina/gocsv v0.0.0-20211020200912-82fc2684cc48
+	github.com/pkg/errors v0.9.1
 	golang.org/x/net v0.0.0-20211123203042-d83791d6bcd9
 	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8
 	google.golang.org/api v0.60.0
