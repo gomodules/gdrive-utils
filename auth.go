@@ -16,7 +16,7 @@ import (
 )
 
 func DefaultClient(dir string, scopes ...string) (*http.Client, error) {
-	b, err := ioutil.ReadFile(filepath.Join(dir, "credentials.json"))
+	b, err := os.ReadFile(filepath.Join(dir, "credentials.json"))
 	if err != nil {
 		return nil, fmt.Errorf("unable to read client secret file: %v", err)
 	}
