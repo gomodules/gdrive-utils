@@ -1,18 +1,17 @@
 module gomodules.xyz/gdrive-utils
 
-go 1.21.5
+go 1.23.0
 
 require (
 	github.com/gocarina/gocsv v0.0.0-20211020200912-82fc2684cc48
 	github.com/pkg/errors v0.9.1
 	golang.org/x/net v0.19.0
-	golang.org/x/oauth2 v0.15.0
+	golang.org/x/oauth2 v0.27.0
 	google.golang.org/api v0.154.0
 )
 
 require (
-	cloud.google.com/go/compute v1.23.3 // indirect
-	cloud.google.com/go/compute/metadata v0.2.3 // indirect
+	cloud.google.com/go/compute/metadata v0.3.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/go-logr/logr v1.3.0 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
@@ -30,7 +29,6 @@ require (
 	golang.org/x/crypto v0.17.0 // indirect
 	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
-	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20231127180814-3a041ad873d4 // indirect
 	google.golang.org/grpc v1.59.0 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
